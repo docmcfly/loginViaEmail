@@ -2,7 +2,12 @@
 Allows login via email in the content management system TYPO3
 
 
-EN:
+------------------------------------------------------------
+
+Note: The extension loses beta status when it has been downloaded 100 times and all issues have been resolved. 
+
+## Description 
+### English
 The "Frontend user login" extension in the core can only be logged in with the user name.  The e-mail address that the user has entered in the personal data cannot be used. 
 
 This extension extends the authorization mechanism: 
@@ -11,7 +16,7 @@ If an email address is entered as the username, the corresponding user is identi
 
 Note: This extension also affects the login via URL. In other words, you can also use an e-mail address for login in the URL. 
 
-DE: 
+### German :: Deutsch
 Das im Core befindlichen "Frontend user login"-Erweiterung kann man sich nur mit dem Nutzernamen einloggen.  Die E-Mail-Adresse, die der Nutzer in den persönlichen Daten hinterlegt hat, kann man nicht verwenden. 
 
 Diese Erweiterung erweitert den Authorisationsmechanismus auf: 
