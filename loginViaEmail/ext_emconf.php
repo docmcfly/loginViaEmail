@@ -38,8 +38,7 @@ Hinweis: Diese Erweiterung wirkt sich auch auf den Login via URL aus. Sprich: ma
     'version' => '0.9.11',
     'constraints' => [
         'depends' => [
-            'typo3' => '8.7.32-8.7.99',
-            'typo3' => '9.5.0-9.5.99',
+            'typo3' => '8.7.32-9.5.99',
         ],
         'conflicts' => [],
         'suggests' => [],
