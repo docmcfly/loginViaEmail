@@ -17,7 +17,7 @@ If an email address is entered as the username, the corresponding user is identi
 Note: This extension also affects the login via URL. In other words, you can also use an e-mail address for login in the URL. 
 
 ### German :: Deutsch
-Das im Core befindlichen "Frontend user login"-Erweiterung kann man sich nur mit dem Nutzernamen einloggen.  Die E-Mail-Adresse, die der Nutzer in den persönlichen Daten hinterlegt hat, kann man nicht verwenden. 
+Mit der im Core befindlichen "Frontend user login"-Erweiterung kann man sich nur mit dem Nutzernamen einloggen. Die E-Mail-Adresse, die der Nutzer in den persönlichen Daten hinterlegt hat, kann man nicht verwenden.
 
 Diese Erweiterung erweitert den Authorisationsmechanismus auf: 
 
