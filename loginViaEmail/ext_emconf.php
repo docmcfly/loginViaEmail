@@ -35,7 +35,7 @@ Hinweis: Diese Erweiterung wirkt sich auch auf den Login via URL aus. Sprich: ma
     'uploadfolder' => 0,
     'createDirs' => '',
     'clearCacheOnLoad' => 0,
-    'version' => '0.9.13',
+    'version' => '1.0.0',
     'constraints' => [
         'depends' => [
             'typo3' => '8.7.32-10.4.99',
