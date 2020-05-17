@@ -31,7 +31,7 @@ Hinweis: Diese Erweiterung wirkt sich auch auf den Login via URL aus. Sprich: ma
     'category' => 'misc',
     'author' => 'Clemens Gogolin',
     'author_email' => 'service@cylancer.net',
-    'state' => 'beta',
+    'state' => 'stable',
     'uploadfolder' => 0,
     'createDirs' => '',
     'clearCacheOnLoad' => 0,
