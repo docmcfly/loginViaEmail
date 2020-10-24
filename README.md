@@ -14,7 +14,6 @@ This extension extends the authorization mechanism:
 
 If an email address is entered as the username, the corresponding user is identified. Only if the user name can be uniquely assigned to the e-mail address will the user name be passed to the authorization mechanism and the login be carried out with it. 
 
-Note: This extension also affects the login via URL. In other words, you can also use an e-mail address for login in the URL. 
 
 ### German :: Deutsch
 Mit der im Core befindlichen "Frontend user login"-Erweiterung kann man sich nur mit dem Nutzernamen einloggen. Die E-Mail-Adresse, die der Nutzer in den persönlichen Daten hinterlegt hat, kann man nicht verwenden.
@@ -23,4 +22,15 @@ Diese Erweiterung erweitert den Authorisationsmechanismus:
 
 Wenn eine E-Mail-Adresse als Nutzername angeben wurde, wird der dazugehörige Nutzer identifiziert. Nur wenn der Nutzername eindeutig  zur E-Mail-Adresse zugeordnet werden kann, wird dem Authorisationsmechanismus der Nutzername übergeben und mit diesem das Login durchgeführt. 
 
-Hinweis: Diese Erweiterung wirkt sich auch auf den Login via URL aus. Sprich: man kann dann auch eine E-Mail-Adresse fürs Login in der URL verwenden. 
+
+## Release notes
+
+### 1.0 
+The first version uses the xclass replacement mechanism. It works with Typo3 version 8.7 - 10.4, but the Typo3 reports contain warnings with a hint for the xclass replacement. 
+
+### 2.0
+The second version uses its own authentication service. Because the new service is derived from the Typo3-FrontendUser-Service, it offers everything of the normal Typo3-behavior and also the login via e-mail. 
+
+I do not have an old typo3 lts version (8.7 or 9.5). This is the reason why I publish the extension only for typo3 10.4.x. 
+
+Hint: To stay closer to the standard, login via URL is no longer allowed.  
