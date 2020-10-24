@@ -1,16 +1,18 @@
 <?php
 
 /***************************************************************
- * Extension Manager/Repository config file for ext: "loginviaemail"
+ * Extension Manager/Repository config file for ext "loginviaemail".
+ *
+ * Auto generated 22-06-2020 17:50
  *
  * Manual updates:
- * Only the data in the array - anything else is removed by next write.
- * "version" and "dependencies" must not be touched!
+ * Only the data in the array - everything else is removed by next
+ * writing. "version" and "dependencies" must not be touched!
  ***************************************************************/
 
-$EM_CONF[$_EXTKEY] = [
-    'title' => 'LoginViaEMail',
-    'description' => 'EN:
+$EM_CONF[$_EXTKEY] = array (
+  'title' => 'LoginViaEMail',
+  'description' => 'EN:
 With the "Frontend user login" extension in the core, you can only log in with the user name. The e-mail address that the user has entered in the personal data cannot be used.
     
 This extension extends the authorization mechanism:
@@ -28,19 +30,27 @@ Wenn eine E-Mail-Adresse als Nutzername angeben wurde, wird der dazugehörige Nu
     
 Hinweis: Diese Erweiterung wirkt sich auch auf den Login via URL aus. Sprich: man kann dann auch eine E-Mail-Adresse fürs Login in der URL verwenden.
 ',
-    'category' => 'misc',
-    'author' => 'Clemens Gogolin',
-    'author_email' => 'service@cylancer.net',
-    'state' => 'stable',
-    'uploadfolder' => 0,
-    'createDirs' => '',
-    'clearCacheOnLoad' => 0,
-    'version' => '1.0.0',
-    'constraints' => [
-        'depends' => [
-            'typo3' => '8.7.32-10.4.99',
-        ],
-        'conflicts' => [],
-        'suggests' => [],
-    ],
-];
+  'category' => 'misc',
+  'author' => 'Clemens Gogolin',
+  'author_email' => 'service@cylancer.net',
+  'state' => 'beta',
+  'uploadfolder' => false,
+  'clearCacheOnLoad' => 0,
+  'version' => '2.0.0',
+  'constraints' => 
+  array (
+    'depends' => 
+    array (
+      'typo3' => '10.4.0-10.4.99',
+    ),
+    'conflicts' => 
+    array (
+    ),
+    'suggests' => 
+    array (
+    ),
+  ),
+  'clearcacheonload' => false,
+  'author_company' => NULL,
+);
+
