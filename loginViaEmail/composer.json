@@ -1,0 +1,29 @@
+{
+	"name" : "cylancer/loginviaemail",
+	"type" : "typo3-cms-extension",
+	"description" : "Allows an login with email address as user name",
+	"license" : "GPL-2.0-or-later",
+	"require" : {
+		"typo3/cms-core" : "~10.4"
+	},
+	"replace" : {
+		"typo3-ter/my-extension" : "self.version"
+	},
+	"autoload" : {
+		"psr-4" : {
+			"Cylancer\\loginViaEmail" : "loginViaEmail/Classes"
+		}
+	},
+	"authors" : [{
+			"name" : "Clemens Gogolin",
+			"email" : "service@cylancer.net",
+			"role" : "Developer",
+			"homepage" : "https://github.com/docmcfly/loginViaEmail"
+		}
+	],
+	"support" : {
+		"email" : "service@cylancer.net",
+		"issues" : "https://github.com/docmcfly/loginViaEmail/issues",
+		"source" : "https://github.com/docmcfly/loginViaEmail/tree/master/loginViaEmail"
+	}
+}
