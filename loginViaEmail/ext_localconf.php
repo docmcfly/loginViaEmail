@@ -2,10 +2,6 @@
 
 defined('TYPO3_MODE') || die('Access denied.');
 
-// $GLOBALS['TYPO3_CONF_VARS']['SYS']['Objects'][TYPO3\CMS\Frontend\Authentication\FrontendUserAuthentication::class] = [
-// 'className' => Cylancer\Loginviaemail\XClass\CyFrontendUserAuthentication::class
-// ];
-
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addService(
     // Extension Key
     'cylancer', 
@@ -26,5 +22,4 @@ defined('TYPO3_MODE') || die('Access denied.');
         'exec' => '',
         'className' => Cylancer\Loginviaemail\Services\EMailFrontendUserAuthenticationService::class
     ));
-
 
