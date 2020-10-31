@@ -14,7 +14,7 @@ defined('TYPO3_MODE') || die('Access denied.');
     // Service key
     Cylancer\Loginviaemail\Services\EMailFrontendUserAuthenticationService::SERVICE_KEY, array(
         'title' => 'Login via email',
-        'description' => 'Allows an login with email address as user name',
+        'description' => 'Allows a login with the e-mail address as username',
 
         'subtype' => 'getUserFE,authUserFE',
 
