@@ -12,7 +12,7 @@ The "Frontend user login" extension in the core can only be logged in with the u
 
 This extension extends the authorization mechanism: 
 
-If an email address is entered as the username, the corresponding user is identified. Only if the user name can be uniquely assigned to the e-mail address will the user name be passed to the authorization mechanism and the login be carried out with it. 
+If an e-mail address is specified as the user name, the associated user is identified. Only if the username can be uniquely assigned to the e-mail address, the authorization mechanism is executed with this username. 
 
 
 ### German :: Deutsch
@@ -20,7 +20,7 @@ Mit der im Core befindlichen "Frontend user login"-Erweiterung kann man sich nur
 
 Diese Erweiterung erweitert den Authorisationsmechanismus: 
 
-Wenn eine E-Mail-Adresse als Nutzername angeben wurde, wird der dazugehörige Nutzer identifiziert. Nur wenn der Nutzername eindeutig  zur E-Mail-Adresse zugeordnet werden kann, wird dem Authorisationsmechanismus der Nutzername übergeben und mit diesem das Login durchgeführt. 
+Wenn eine E-Mail-Adresse als Nutzername angeben wurde, wird der dazugehörige Nutzer identifiziert. Nur wenn der Nutzername eindeutig zur E-Mail-Adresse zugeordnet werden kann, wird der Authorisationsmechanismus mit diesem Nutzernamen durchgeführt. 
 
 
 ## Release notes
