@@ -4,14 +4,15 @@
 	"description" : "Allows a login with the e-mail address as username",
 	"license" : "GPL-2.0-or-later",
 	"require" : {
-		"typo3/cms-core" : "~10.4"
+		"typo3/cms-core" : "^10.4"
 	},
 	"replace" : {
-		"typo3-ter/my-extension" : "self.version"
+		"cylancer/loginviaemail" : "self.version",
+		"typo3-ter/loginviaemail" : "self.version"
 	},
 	"autoload" : {
 		"psr-4" : {
-			"Cylancer\\Loginviaemail\\" : "Classes/"
+			"Cylancer\\Loginviaemail\\" : "Classes"
 		}
 	},
 	"authors" : [{
