@@ -7,13 +7,26 @@
 		"typo3/cms-core" : "^10.4"
 	},
 	"replace" : {
+<<<<<<< HEAD
 		"cylancer/loginviaemail" : "self.version"
+=======
+		"cylancer/loginviaemail" : "2.0.0"
+>>>>>>> branch 'master' of https://github.com/docmcfly/loginViaEmail.git
 	},
+<<<<<<< HEAD
 	"repositories" : [{
 			"type" : "composer",
 			"url" : "https://github.com/docmcfly/loginViaEmail"
 		}
 	],
+=======
+	"repositories": [
+         {
+             "type": "composer",
+            "url": "https://github.com/docmcfly/loginViaEmail"
+        }
+    ],
+>>>>>>> branch 'master' of https://github.com/docmcfly/loginViaEmail.git
 	"autoload" : {
 		"psr-4" : {
 			"Cylancer\\Loginviaemail\\" : "Classes"
