@@ -7,7 +7,7 @@
 		"typo3/cms-core" : "^10.4"
 	},
 	"replace" : {
-		"cylancer/loginviaemail" : "2.0.0"
+		"cylancer/loginviaemail" : "self.version"
 	},
 	"repositories" : [{
 			"type" : "composer",
