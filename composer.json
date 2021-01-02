@@ -3,13 +3,11 @@
 	"type" : "typo3-cms-extension",
 	"description" : "Allows a login with the e-mail address as username",
 	"license" : "GPL-2.0-or-later",
-	"version" : "2.0.0",
 	"require" : {
 		"typo3/cms-core" : "^10.4"
 	},
 	"replace" : {
-		"cylancer/loginviaemail" : "self.version",
-		"typo3-ter/loginviaemail" : "self.version"
+		"cylancer/loginviaemail" : "2.0.0"
 	},
 	"repositories": [
          {
