@@ -35,12 +35,12 @@ eindeutig zur E-Mail-Adresse zugeordnet werden kann, wird dem Authorisationsmech
   'state' => 'stable',
   'uploadfolder' => false,
   'clearCacheOnLoad' => 0,
-  'version' => '2.0.0',
+  'version' => '3.0.0',
   'constraints' => 
   array (
     'depends' => 
     array (
-      'typo3' => '10.4.0-10.4.99',
+      'typo3' => '11.5.12-11.5.99',
     ),
     'conflicts' => 
     array (
