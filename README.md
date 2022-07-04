@@ -30,3 +30,7 @@ The second version uses its own authentication service. Because the new service 
 I do not have an old typo3 lts version (8.7 or 9.5). This is the reason why I publish the extension only for typo3 10.4.x. 
 
 Hint: To stay closer to the standard, login via URL is no longer allowed.  
+
+### 3.0
+Changeover to the new TYPO3 version. The extension is now compatible for TYPO3 version 11.5. 
+There are no technical changes. 
