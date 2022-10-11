@@ -18,7 +18,6 @@ Diese Erweiterung erweitert den Authorisationsmechanismus:
 
 Wenn eine E-Mail-Adresse als Nutzername angeben wurde, wird der dazugehörige Nutzer identifiziert. Nur wenn der Nutzername eindeutig zur E-Mail-Adresse zugeordnet werden kann, wird der Authorisationsmechanismus mit diesem Nutzernamen durchgeführt. 
 
-
 ## Release notes
 
 ### 1.0 
