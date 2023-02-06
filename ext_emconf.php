@@ -35,7 +35,7 @@ eindeutig zur E-Mail-Adresse zugeordnet werden kann, wird dem Authorisationsmech
   'state' => 'stable',
   'uploadfolder' => false,
   'clearCacheOnLoad' => 0,
-  'version' => '2.0.0',
+  'version' => 'v2.0',
   'constraints' => 
   array (
     'depends' => 
