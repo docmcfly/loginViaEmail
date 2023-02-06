@@ -1,34 +1,31 @@
 {
-	"name" : "cylancer/loginviaemail",
-	"type" : "typo3-cms-extension",
-	"description" : "Allows a login with the e-mail address as username",
-	"license" : "GPL-2.0-or-later",
-	"require" : {
-		"typo3/cms-core" : "^10.4"
-	},
-	"replace" : {
-		"cylancer/loginviaemail" : "2.0.0"
-	},
-	"repositories": [
-         {
-             "type": "composer",
-            "url": "https://github.com/docmcfly/loginViaEmail"
+    "name": "cylancer/loginviaemail",
+    "type": "typo3-cms-extension",
+    "description": "Allows a login with the e-mail address as username",
+    "license": "GPL-2.0-or-later",
+    "require": {
+        "typo3/cms-core": "^11.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Cylancer\\Loginviaemail\\": "Classes"
+        }
+    },
+    "authors": [
+        {
+            "name": "Clemens Gogolin",
+            "email": "service@cylancer.net",
+            "role": "developer",
+            "homepage": "https://github.com/docmcfly/loginViaEmail"
         }
     ],
-	"autoload" : {
-		"psr-4" : {
-			"Cylancer\\Loginviaemail\\" : "Classes"
-		}
-	},
-	"authors" : [{
-			"name" : "Clemens Gogolin",
-			"email" : "service@cylancer.net",
-			"role" : "developer",
-			"homepage" : "https://github.com/docmcfly/loginViaEmail"
-		}
-	],
-	"support" : {
-		"issues" : "https://github.com/docmcfly/loginViaEmail/issues",
-		"source" : "https://github.com/docmcfly/loginViaEmail/tree/master/loginViaEmail"
-	}
+    "support": {
+        "issues": "https://github.com/docmcfly/loginViaEmail/issues",
+        "source": "https://github.com/docmcfly/loginViaEmail/tree/master/loginViaEmail"
+    },
+    "extra": {
+        "typo3/cms": {
+            "extension-key": "loginviaemail"
+        }
+    }
 }
