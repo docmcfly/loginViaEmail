@@ -5,6 +5,7 @@ use TYPO3\CMS\Frontend\Authentication\FrontendUserAuthentication;
 use TYPO3\CMS\Core\Crypto\PasswordHashing\PasswordHashFactory;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
+
 /**
  * This file is part of the "login via email" Extension for TYPO3 CMS.
  *
@@ -111,7 +112,8 @@ class EMailFrontendUserAuthenticationService extends FrontendUserAuthentication
      */
     private function checkPassword($password, $passwordHash)
     {
-        return GeneralUtility::makeInstance(PasswordHashFactory::class)->get($passwordHash, $this->loginType)->checkPassword($password, $passwordHash);
+        return GeneralUtility::makeInstance(PasswordHashFactory::class)->get($passwordHash, $this->loginType)
+            ->checkPassword($password, $passwordHash);
     }
 }
 
