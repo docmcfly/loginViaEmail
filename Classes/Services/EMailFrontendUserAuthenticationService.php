@@ -5,6 +5,17 @@ use TYPO3\CMS\Frontend\Authentication\FrontendUserAuthentication;
 use TYPO3\CMS\Core\Crypto\PasswordHashing\PasswordHashFactory;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
+
+/**
+ * This file is part of the "login via email" Extension for TYPO3 CMS.
+ *
+ * For the full copyright and license information, please read the
+ * LICENSE.txt file that was distributed with this source code.
+ *
+ * (c) 2023 Clemens Gogolin <service@cylancer.net>
+ *
+ * @package Cylancer\Loginviaemail\Services;
+ */
 class EMailFrontendUserAuthenticationService extends FrontendUserAuthentication
 {
 
