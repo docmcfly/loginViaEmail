@@ -30,7 +30,7 @@ Diese Erweiterung erweitert den Authorisationsmechanismus:
 Wenn eine E-Mail-Adresse als Nutzername angeben wurde, wird der dazugehörige Nutzer identifiziert. Nur wenn der Nutzername 
 eindeutig zur E-Mail-Adresse zugeordnet werden kann, wird dem Authorisationsmechanismus der Nutzername übergeben und mit diesem das Login durchgeführt.',
     'category' => 'misc',
-    'version' => '3.0.1',
+    'version' => '3.0.2',
     'state' => 'stable',
     'uploadfolder' => false,
     'clearcacheonload' => false,
@@ -51,6 +51,7 @@ eindeutig zur E-Mail-Adresse zugeordnet werden kann, wird dem Authorisationsmech
  
  3.0.0 :: Initial
  3.0.1 :: Update the extension icon
+ 3.0.2 :: Small database query optimization
  
    ---- CHANGELOG ---------- */
 
