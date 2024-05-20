@@ -30,7 +30,7 @@ Diese Erweiterung erweitert den Authorisationsmechanismus:
 Wenn eine E-Mail-Adresse als Nutzername angeben wurde, wird der dazugehörige Nutzer identifiziert. Nur wenn der Nutzername 
 eindeutig zur E-Mail-Adresse zugeordnet werden kann, wird dem Authorisationsmechanismus der Nutzername übergeben und mit diesem das Login durchgeführt.',
     'category' => 'misc',
-    'version' => '3.0.2',
+    'version' => '4.0.0',
     'state' => 'stable',
     'uploadfolder' => false,
     'clearcacheonload' => false,
@@ -39,7 +39,7 @@ eindeutig zur E-Mail-Adresse zugeordnet werden kann, wird dem Authorisationsmech
     'author_company' => NULL,
     'constraints' => array(
         'depends' => array(
-            'typo3' => '11.5.0-11.5.99'
+            'typo3' => '12.4.11-12.4.99'
         ),
         'conflicts' => array(),
         'suggests' => array()
@@ -48,10 +48,11 @@ eindeutig zur E-Mail-Adresse zugeordnet werden kann, wird dem Authorisationsmech
 
 
 /* ---- CHANGELOG ---------- 
- 
- 3.0.0 :: Initial
+
+ 4.0.0 :: TYPO3 12.4 compatibility   
+ 3.0.2 :: Small optimation
  3.0.1 :: Update the extension icon
- 3.0.2 :: Small database query optimization
+ 3.0.0 :: Initial
  
    ---- CHANGELOG ---------- */
 
