@@ -106,7 +106,9 @@ class EMailFrontendUserAuthenticationService extends FrontendUserAuthentication
         }
 
         $query->setMaxResults(2); //  0 : not found / 1 : found / 2 : to many found. 
+
         $rows = $query->executeQuery()->fetchAllAssociative();
+
         if (count($rows) == 1) {
             return $rows[0];
         }
