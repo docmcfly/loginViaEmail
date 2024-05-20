@@ -1,6 +1,7 @@
 <?php
 namespace Cylancer\Loginviaemail\Services;
 
+use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Frontend\Authentication\FrontendUserAuthentication;
 use TYPO3\CMS\Core\Crypto\PasswordHashing\PasswordHashFactory;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
@@ -11,14 +12,18 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
  * For the full copyright and license information, please read the
  * LICENSE.txt file that was distributed with this source code.
  *
- * (c) 2023 Clemens Gogolin <service@cylancer.net>
+ * (c) 2024 Clemens Gogolin <service@cylancer.net>
  *
  * @package Cylancer\Loginviaemail\Services;
  */
 class EMailFrontendUserAuthenticationService extends FrontendUserAuthentication
 {
 
+    /** @var string */
     protected $email_column = 'email';
+
+    /** @var array */
+    protected $loginData = [];
 
     const SERVICE_KEY = 'Cylancer\Loginviaemail\Services\EMailFrontendUserAuthenticationService';
 
@@ -45,16 +50,19 @@ class EMailFrontendUserAuthenticationService extends FrontendUserAuthentication
     /**
      * Initialize the authentication
      *
-     * @param String $param
+     * @param string $subType
+     * @param array $param
+     * @param array $param
      * @return boolean
      */
-    function initAuth($param)
+    function initAuth(string $subType, array $loginData)
     {
-        return $param == 'getUserFE';
+        $this->loginData = $loginData;
+        return $subType == 'getUserFE';
     }
 
     /**
-     *
+     *$loginData
      * @inheritdoc
      * @param array $user
      * @return number
@@ -64,10 +72,10 @@ class EMailFrontendUserAuthenticationService extends FrontendUserAuthentication
         if ($user == null) {
             return 150; // no auth - continue
         } else {
-            if ($this->checkPassword(trim($this->getLoginFormData()['uident']), $user[$this->userident_column])) {
+            if ($this->checkPassword(trim($this->loginData['uident']), $user[$this->userident_column])) {
                 return 250; // successful - stop
             } else {
-                return - 50; // failed - stop
+                return -50; // failed - stop
             }
         }
     }
@@ -79,26 +87,27 @@ class EMailFrontendUserAuthenticationService extends FrontendUserAuthentication
      */
     function getUser()
     {
-        $loginData = $this->getLoginFormData();
-        $uname = trim($loginData['uname']);
+        $uname = trim($this->loginData['uname']);
 
-        $qb = GeneralUtility::makeInstance(\TYPO3\CMS\Core\Database\ConnectionPool::class)->getQueryBuilderForTable($this->user_table);
+        $qb = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable($this->user_table);
         $p_uname = $qb->createNamedParameter($uname);
         $query = $qb->select('*')->from($this->user_table);
 
         if (filter_var($uname, FILTER_VALIDATE_EMAIL)) {
-            $query->where($qb->expr()
-                ->orX($qb->expr()
-                ->eq($this->username_column, $p_uname), $qb->expr()
-                ->eq($this->email_column, $p_uname)));
+            $query->where(
+                $qb->expr()->or(
+                    $qb->expr()->eq($this->username_column, $p_uname),
+                    $qb->expr()->eq($this->email_column, $p_uname)
+                )
+            );
         } else {
             $query->where($qb->expr()
                 ->eq($this->username_column, $p_uname));
         }
 
         $query->setMaxResults(2); //  0 : not found / 1 : found / 2 : to many found. 
-        
-        $rows = $query->execute()->fetchAllAssociative();
+
+        $rows = $query->executeQuery()->fetchAllAssociative();
 
         if (count($rows) == 1) {
             return $rows[0];
