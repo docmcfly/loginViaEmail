@@ -52,7 +52,7 @@ Authorisationsmechanismus der Nutzername übergeben und mit diesem das Login dur
 
 /* ---- CHANGELOG ---------- 
 
-5.0.2 ::  Clean coding
+ 5.0.2 ::  Clean coding
  5.0.1 :: Add a extension icon
  5.0.0 :: TYPO3 13.4 compatibility   
  4.0.0 :: TYPO3 12.4 compatibility   
