@@ -1,4 +1,15 @@
 <?php
+/**
+ * This file is part of the "login via email" Extension for TYPO3 CMS.
+ *
+ * For the full copyright and license information, please read the
+ * LICENSE.txt file that was distributed with this source code.
+ *
+ * (c) 2025 C. Gogolin <service@cylancer.net>
+ * 
+ */
+
+ use Cylancer\Loginviaemail\Services\EMailFrontendUserAuthenticationService;
 
 defined('TYPO3') || die('Access denied.');
 
@@ -21,6 +32,6 @@ defined('TYPO3') || die('Access denied.');
         
         'os' => '',
         'exec' => '',
-        'className' => Cylancer\Loginviaemail\Services\EMailFrontendUserAuthenticationService::class
+        'className' => EMailFrontendUserAuthenticationService::class
     ]);
 

@@ -1,4 +1,15 @@
 <?php
+/**
+ * This file is part of the "login via email" Extension for TYPO3 CMS.
+ *
+ * For the full copyright and license information, please read the
+ * LICENSE.txt file that was distributed with this source code.
+ *
+ * (c) 2025 C. Gogolin <service@cylancer.net>
+ * 
+ * @package Cylancer\Loginviaemail\Services;
+ */
+
 namespace Cylancer\Loginviaemail\Services;
 
 use TYPO3\CMS\Core\Database\ConnectionPool;
@@ -6,33 +17,21 @@ use TYPO3\CMS\Frontend\Authentication\FrontendUserAuthentication;
 use TYPO3\CMS\Core\Crypto\PasswordHashing\PasswordHashFactory;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
-/**
- * This file is part of the "login via email" Extension for TYPO3 CMS.
- *
- * For the full copyright and license information, please read the
- * LICENSE.txt file that was distributed with this source code.
- *
- * (c) 2024 Clemens Gogolin <service@cylancer.net>
- *
- * @package Cylancer\Loginviaemail\Services;
- */
 class EMailFrontendUserAuthenticationService extends FrontendUserAuthentication
 {
 
-    /** @var string */
-    protected $email_column = 'email';
+    protected string $email_column = 'email';
 
-    /** @var array */
-    protected $loginData = [];
+    protected array $loginData = [];
 
-    const SERVICE_KEY = 'Cylancer\Loginviaemail\Services\EMailFrontendUserAuthenticationService';
+    private const SERVICE_KEY = 'Cylancer\Loginviaemail\Services\EMailFrontendUserAuthenticationService';
 
     /**
      * Initialize the service
      *
      * @return boolean
      */
-    function init()
+    function init(): bool
     {
         return true;
     }
@@ -42,7 +41,7 @@ class EMailFrontendUserAuthenticationService extends FrontendUserAuthentication
      *
      * @return string
      */
-    function getServiceKey()
+    public function getServiceKey(): string
     {
         return EMailFrontendUserAuthenticationService::SERVICE_KEY;
     }
@@ -55,19 +54,20 @@ class EMailFrontendUserAuthenticationService extends FrontendUserAuthentication
      * @param array $param
      * @return boolean
      */
-    function initAuth(string $subType, array $loginData)
+    public function initAuth(string $subType, array $loginData): bool
     {
         $this->loginData = $loginData;
         return $subType == 'getUserFE';
     }
 
     /**
-     *$loginData
+     *
      * @inheritdoc
+     * 
      * @param array $user
      * @return number
      */
-    function authUser($user)
+    public function authUser(array $user): int
     {
         if ($user == null) {
             return 150; // no auth - continue
@@ -83,9 +83,10 @@ class EMailFrontendUserAuthenticationService extends FrontendUserAuthentication
     /**
      *
      * @inheritdoc
+     * 
      * @return array|boolean
      */
-    function getUser()
+    public function getUser(): array|bool
     {
         $uname = trim($this->loginData['uname']);
 
@@ -117,11 +118,10 @@ class EMailFrontendUserAuthenticationService extends FrontendUserAuthentication
 
     /**
      * Check the password
-     *
-     * @return null|string
-     */
-    private function checkPassword($password, $passwordHash)
-    {
+     * @return bool
+     **/
+    private function checkPassword($password, $passwordHash): bool
+     {
         return GeneralUtility::makeInstance(PasswordHashFactory::class)->get($passwordHash, $this->loginType)->checkPassword($password, $passwordHash);
     }
 }

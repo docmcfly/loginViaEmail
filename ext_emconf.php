@@ -6,7 +6,7 @@
  * For the full copyright and license information, please read the
  * LICENSE.txt file that was distributed with this source code.
  *
- * (c) 2023 Clemens Gogolin <service@cylancer.net>
+ * (c) 2025 C. Gogolin <service@cylancer.net>
  * 
  */
 
@@ -33,25 +33,27 @@ Wenn eine E-Mail-Adresse als Nutzername angeben wurde, wird der dazugehörige Nu
 Nur wenn der Nutzername eindeutig zur E-Mail-Adresse zugeordnet werden kann, wird dem 
 Authorisationsmechanismus der Nutzername übergeben und mit diesem das Login durchgeführt.',
     'category' => 'misc',
-    'version' => '5.0.0',
+    'version' => '5.0.2',
     'state' => 'stable',
     'uploadfolder' => false,
     'clearcacheonload' => false,
-    'author' => 'Clemens Gogolin',
+    'author' => 'C. Gogolin',
     'author_email' => 'service@cylancer.net',
     'author_company' => NULL,
-    'constraints' => array(
-        'depends' => array(
+    'constraints' => [
+        'depends' => [
             'typo3' => '13.4.4-13.4.99'
-        ),
-        'conflicts' => array(),
-        'suggests' => array()
-    )
+        ],
+        'conflicts' => [],
+        'suggests' => []
+    ]
 );
 
 
 /* ---- CHANGELOG ---------- 
 
+5.0.2 ::  Clean coding
+ 5.0.1 :: Add a extension icon
  5.0.0 :: TYPO3 13.4 compatibility   
  4.0.0 :: TYPO3 12.4 compatibility   
  3.0.2 :: Small optimation
