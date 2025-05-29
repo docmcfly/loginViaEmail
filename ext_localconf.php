@@ -20,7 +20,7 @@ defined('TYPO3') || die('Access denied.');
     'auth',
     // Service key
     'Cylancer\Loginviaemail\Services\EMailFrontendUserAuthenticationService',
-    [
+    info: [
         'title' => 'Login via email',
         'description' => 'Allows a login with the e-mail address as username',
         
