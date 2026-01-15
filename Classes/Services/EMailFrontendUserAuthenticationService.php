@@ -5,19 +5,18 @@
  * For the full copyright and license information, please read the
  * LICENSE.txt file that was distributed with this source code.
  *
- * (c) 2025 C. Gogolin <service@cylancer.net>
- * 
- * @package Cylancer\Loginviaemail\Services;
+ * (c) 2026 C. Gogolin <service@cylancer.net>
+ *
  */
 
 namespace Cylancer\Loginviaemail\Services;
 
+use TYPO3\CMS\Core\Authentication\AbstractAuthenticationService;
 use TYPO3\CMS\Core\Database\ConnectionPool;
-use TYPO3\CMS\Frontend\Authentication\FrontendUserAuthentication;
 use TYPO3\CMS\Core\Crypto\PasswordHashing\PasswordHashFactory;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
-class EMailFrontendUserAuthenticationService extends FrontendUserAuthentication
+class EMailFrontendUserAuthenticationService extends AbstractAuthenticationService
 {
 
     protected string $email_column = 'email';
@@ -25,16 +24,6 @@ class EMailFrontendUserAuthenticationService extends FrontendUserAuthentication
     protected array $loginData = [];
 
     private const SERVICE_KEY = 'Cylancer\Loginviaemail\Services\EMailFrontendUserAuthenticationService';
-
-    /**
-     * Initialize the service
-     *
-     * @return boolean
-     */
-    function init(): bool
-    {
-        return true;
-    }
 
     /**
      * Returns the service key.
@@ -47,23 +36,9 @@ class EMailFrontendUserAuthenticationService extends FrontendUserAuthentication
     }
 
     /**
-     * Initialize the authentication
-     *
-     * @param string $subType
-     * @param array $param
-     * @param array $param
-     * @return boolean
-     */
-    public function initAuth(string $subType, array $loginData): bool
-    {
-        $this->loginData = $loginData;
-        return $subType == 'getUserFE';
-    }
-
-    /**
      *
      * @inheritdoc
-     * 
+     *
      * @param array $user
      * @return number
      */
@@ -72,7 +47,7 @@ class EMailFrontendUserAuthenticationService extends FrontendUserAuthentication
         if ($user == null) {
             return 150; // no auth - continue
         } else {
-            if ($this->checkPassword(trim($this->loginData['uident']), $user[$this->userident_column])) {
+            if ($this->checkPassword(trim($this->login['uident']), $user[$this->pObj->userident_column])) {
                 return 250; // successful - stop
             } else {
                 return -50; // failed - stop
@@ -83,30 +58,40 @@ class EMailFrontendUserAuthenticationService extends FrontendUserAuthentication
     /**
      *
      * @inheritdoc
-     * 
+     *
      * @return array|boolean
      */
     public function getUser(): array|bool
     {
-        $uname = trim($this->loginData['uname']);
 
-        $qb = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable($this->user_table);
+        $userTable = $this->pObj->user_table;
+
+        $qb = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable($userTable);
+
+        $uname = trim($this->login['uname']);
         $p_uname = $qb->createNamedParameter($uname);
-        $query = $qb->select('*')->from($this->user_table);
+
+        $query = $qb->select('*')->from($userTable);
 
         if (filter_var($uname, FILTER_VALIDATE_EMAIL)) {
             $query->where(
                 $qb->expr()->or(
-                    $qb->expr()->eq($this->username_column, $p_uname),
+                    $qb->expr()->eq($this->pObj->username_column, $p_uname),
                     $qb->expr()->eq($this->email_column, $p_uname)
                 )
             );
         } else {
             $query->where($qb->expr()
-                ->eq($this->username_column, $p_uname));
+                ->eq($this->pObj->username_column, $p_uname));
         }
 
-        $query->setMaxResults(2); //  0 : not found / 1 : found / 2 : to many found. 
+        if ($this->pObj->checkPid) {
+            $query->andWhere(
+                $qb->expr()->in('pid', $this->pObj->checkPid_value)
+            );
+        }
+
+        $query->setMaxResults(2); //  0 : not found / 1 : found / 2 : to many found.
 
         $rows = $query->executeQuery()->fetchAllAssociative();
 
@@ -121,9 +106,7 @@ class EMailFrontendUserAuthenticationService extends FrontendUserAuthentication
      * @return bool
      **/
     private function checkPassword($password, $passwordHash): bool
-     {
-        return GeneralUtility::makeInstance(PasswordHashFactory::class)->get($passwordHash, $this->loginType)->checkPassword($password, $passwordHash);
+    {
+        return GeneralUtility::makeInstance(PasswordHashFactory::class)->get($passwordHash, $this->authInfo['loginType'])->checkPassword($password, $passwordHash);
     }
 }
-
-
