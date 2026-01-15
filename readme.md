@@ -23,11 +23,11 @@ Authorisationsmechanismus der Nutzername übergeben und mit diesem das Login dur
 
 ## CHANGELOG
 
- 5.1.0 :: Change service API
- 5.0.2 :: Clean coding
- 5.0.1 :: Add a extension icon
- 5.0.0 :: TYPO3 13.4 compatibility
- 4.0.0 :: TYPO3 12.4 compatibility
- 3.0.2 :: Small optimation
- 3.0.1 :: Update the extension icon
- 3.0.0 :: Initial
+* 5.1.0 :: Change service API
+* 5.0.2 :: Clean coding
+* 5.0.1 :: Add a extension icon
+* 5.0.0 :: TYPO3 13.4 compatibility
+* 4.0.0 :: TYPO3 12.4 compatibility
+* 3.0.2 :: Small optimation
+* 3.0.1 :: Update the extension icon
+* 3.0.0 :: Initial
