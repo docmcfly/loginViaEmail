@@ -5,7 +5,7 @@
  * For the full copyright and license information, please read the
  * LICENSE.txt file that was distributed with this source code.
  *
- * (c) 2025 C. Gogolin <service@cylancer.net>
+ * (c) 2026 C. Gogolin <service@cylancer.net>
  *
  */
 
