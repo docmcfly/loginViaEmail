@@ -48,5 +48,3 @@ Authorisationsmechanismus der Nutzername übergeben und mit diesem das Login dur
         'suggests' => []
     ]
 );
-
-

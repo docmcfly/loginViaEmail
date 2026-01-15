@@ -110,5 +110,3 @@ class EMailFrontendUserAuthenticationService extends AbstractAuthenticationServi
         return GeneralUtility::makeInstance(PasswordHashFactory::class)->get($passwordHash, $this->authInfo['loginType'])->checkPassword($password, $passwordHash);
     }
 }
-
-
