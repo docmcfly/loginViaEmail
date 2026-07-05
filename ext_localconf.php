@@ -5,11 +5,11 @@
  * For the full copyright and license information, please read the
  * LICENSE.txt file that was distributed with this source code.
  *
- * (c) 2025 C. Gogolin <service@cylancer.net>
- * 
+ * (c) 2026 C. Gogolin <service@cylancer.net>
+ *
  */
 
- use Cylancer\Loginviaemail\Services\EMailFrontendUserAuthenticationService;
+use Cylancer\Loginviaemail\Services\EMailFrontendUserAuthenticationService;
 
 defined('TYPO3') || die('Access denied.');
 
@@ -23,13 +23,10 @@ defined('TYPO3') || die('Access denied.');
     info: [
         'title' => 'Login via email',
         'description' => 'Allows a login with the e-mail address as username',
-        
         'subtype' => 'getUserFE,authUserFE',
-        
         'available' => true,
         'priority' => 60,
         'quality' => 50,
-        
         'os' => '',
         'exec' => '',
         'className' => EMailFrontendUserAuthenticationService::class

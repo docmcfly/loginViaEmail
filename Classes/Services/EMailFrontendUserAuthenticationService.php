@@ -63,7 +63,6 @@ class EMailFrontendUserAuthenticationService extends AbstractAuthenticationServi
      */
     public function getUser(): array|bool
     {
-
         $userTable = $this->pObj->user_table;
 
         $qb = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable($userTable);
@@ -94,7 +93,6 @@ class EMailFrontendUserAuthenticationService extends AbstractAuthenticationServi
         $query->setMaxResults(2); //  0 : not found / 1 : found / 2 : to many found.
 
         $rows = $query->executeQuery()->fetchAllAssociative();
-
         if (count($rows) == 1) {
             return $rows[0];
         }

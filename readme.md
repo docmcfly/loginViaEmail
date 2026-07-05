@@ -23,6 +23,7 @@ Authorisationsmechanismus der Nutzername übergeben und mit diesem das Login dur
 
 ## CHANGELOG
 
+* 6.0.0 :: TYPO3 14.3 compatibility
 * 5.1.0 :: Change service API
 * 5.0.2 :: Clean coding
 * 5.0.1 :: Add a extension icon
